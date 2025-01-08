@@ -25,9 +25,3 @@ export const messagesAtom = atom<Message[]>([
     avatar: `https://picsum.photos/seed/user2/50`,
   },
 ]);
-
-export const inputAtom = atom<string>("");
-
-export const showNewMessageAtom = atom<boolean>(false);
-
-export const lastMessageAtom = atom<Message | null>(null);

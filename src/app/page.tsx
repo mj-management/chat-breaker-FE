@@ -3,13 +3,13 @@
 import { Card } from "@/components/ui/card";
 import UserDialog from "@/components/user/user-dialog";
 import ChatHeader from "@/components/chat/chat-header";
-import ChatContent from "@/components/chat/chat-content";
+import ChatMessageArea from "@/components/chat/chat-message-area";
 
 export default function Page() {
   return (
     <Card className="w-full h-screen rounded-none flex flex-col">
       <ChatHeader />
-      <ChatContent />
+      <ChatMessageArea />
       <UserDialog />
     </Card>
   );

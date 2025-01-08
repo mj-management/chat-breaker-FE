@@ -26,6 +26,20 @@ app.prepare().then(() => {
     socket.on("disconnect", () => {
       console.log("Client disconnected:", socket.id);
     });
+
+    socket.on("send_message", (data) => {
+      console.log(`Message received from ${socket.id}:`, data);
+
+      const messageData = {
+        role: "user",
+        content: data.content,
+        avatar: `https://picsum.photos/seed/${Math.random().toString(36).substring(7)}/50`,
+        timestamp: new Date().toISOString(),
+        senderId: socket.id,
+      };
+
+      io.emit("new_message", messageData);
+    });
   });
 
   httpServer
